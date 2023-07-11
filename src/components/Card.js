@@ -14,7 +14,7 @@ function Card({recette}) {
                 <p>{recette.strArea}</p>
             </div>
             <div className="recipe">
-                <p>{recette.strInstructions.substring(0, 200).toLowerCase() + "..."}</p>
+                <p>{recette.strInstructions.substring(0, 180).toLowerCase() + "..."}</p>
             </div>
         </div>
     </div>
