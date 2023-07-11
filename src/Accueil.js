@@ -17,11 +17,7 @@ function Accueil() {
             setRecipe(response.data.meals)
         })
     }
-    useEffect(() => {
-        return (
-            getRecipe()
-        )
-    },[searchValue])
+    useEffect(getRecipe,[searchValue])
   return (
     <div>
         <Navbar />
