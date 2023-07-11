@@ -1,0 +1,12 @@
+nav {
+    background-color: #151515;
+    height: 100px;
+    color: #fafafa;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Geologica', sans-serif;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
