@@ -8,31 +8,36 @@ function Accueil() {
 
     const [recipe, setRecipe] = useState([]);
     const [searchValue, setSearchValue] = useState("");
-    const [rangeValue, setRangeValue] = useState(0);
+    const [rangeValue, setRangeValue] = useState(1);
     const [sort, setSort] = useState(true)
 
+    // Fonction qui récupère les données de l'API
     const getRecipe = () => {
         axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchValue}`)
         .then(function (response) {
             setRecipe(response.data.meals)
         })
     }
+    // UseEffect qui permet de récupérer les données de l'API à chaque fois que la valeur de searchValue change
     useEffect(getRecipe,[searchValue])
+
   return (
     <div>
         <Navbar />
         <div className="sideNav">
             <div className="search">
-                <input type="text" name="search" id="search"  placeholder='Rechercher' defaultValue={searchValue} onKeyUp={(e) => {
+                <input type="text" name="search" id="search"  placeholder='Rechercher' onKeyUp={(e) => {
                     setSearchValue(e.target.value)
                 }} />
             </div>
             <div className="range">
                 <div className="formRange">
-                <input type="range" name="range" id="range" onInput={(e) => {
-                    setRangeValue(e.target.value)
-                }} />
-                <span>{rangeValue}</span>
+                    <input type="range" name="range" id="range" min={1} defaultValue={rangeValue} step={1} onInput={(e) => {
+                        setRangeValue(e.target.value)
+                    }} />
+                    <span style={
+                        {left: rangeValue + "%"}
+                    }>{rangeValue}</span>
                 </div>
             </div>
             <div className="buttonTri">

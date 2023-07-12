@@ -28,10 +28,41 @@ body {
     font-family: 'geologica';
 }
 
+.sideNav .range {
+    background-color: white;
+    height: 40px;
+    border-radius: 6px;
+    box-shadow: 0 0 32px #1919194b;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .sideNav .range .formRange {
     display: flex;
     position: relative;
-    gap: .5rem;
+}
+
+.sideNav .range .formRange input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #cecece;
+    cursor: pointer;
+    height: 4px;
+    border-radius: 6px;
+}
+
+.sideNav .range .formRange input::-webkit-progress-value {
+    background: #191919;
+}
+
+.sideNav .range .formRange input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    background: #191919;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
 }
 
 .sideNav .range .formRange span {
@@ -43,6 +74,9 @@ body {
     height: 25px;
     border-radius: 50%;
     padding-bottom: .1rem;
+    position: absolute;
+    top: -30px;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
     justify-content: center;
